@@ -47,11 +47,13 @@ class sankaku():
                 with open(r'%s\%s.%s' % (savePath, id, format), 'wb') as fp:
                     fp.write(pic.content)
                     fp.close()
+        elif 'vedio' in value:  # 视频下载 咕咕咕
+            pass
 
 
 if __name__ == '__main__':
     savePath = r'E:\没有灵魂的色图文件夹'
-    tags = ['gloves']
+    tags = ['BDSM', 'white_legwear', 'vtuber']
     for tag in tags:
         savePath = os.path.join(savePath, tag)
         if not os.path.exists(savePath):
