@@ -25,7 +25,7 @@ class sankaku():
                 if score >= threashold:
                     id = value.split('"p')[1].split('"')[0]
                     if not os.path.exists(os.path.join(savePath, id)):
-                        rndSlp(8, 10)
+                        rndSlp(20, 30)
                         Thread(target=self.dnld, args=(id, savePath)).start()
 
     def dnld(self, id, savePath):
@@ -52,12 +52,12 @@ class sankaku():
 
 
 if __name__ == '__main__':
-    savePath = r'E:\没有灵魂的色图文件夹'
-    if not os.path.exists(savePath):
-        os.mkdir(savePath)
-    tags = ['BDSM', 'white_legwear', 'vtuber']
+    rootPath = r'E:\没有灵魂的色图文件夹'
+    if not os.path.exists(rootPath):
+        os.mkdir(rootPath)
+    tags = ['BDSM', 'legwear', 'gloves', 'otoko_no_ko']
     for tag in tags:
-        savePath = os.path.join(savePath, tag)
+        savePath = os.path.join(rootPath, tag)
         if not os.path.exists(savePath):
             os.mkdir(savePath)
         Thread(target=sankaku, args=(tag, savePath)).start()
