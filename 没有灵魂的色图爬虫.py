@@ -53,6 +53,8 @@ class sankaku():
 
 if __name__ == '__main__':
     savePath = r'E:\没有灵魂的色图文件夹'
+    if not os.path.exists(savePath):
+        os.mkdir(savePath)
     tags = ['BDSM', 'white_legwear', 'vtuber']
     for tag in tags:
         savePath = os.path.join(savePath, tag)
